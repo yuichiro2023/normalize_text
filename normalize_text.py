@@ -14,7 +14,7 @@ df['cleaned_input'] = df['input'].apply(lambda x: re.sub(r'\[\d+\]', '', str(x))
 df['cleaned_instruction'] = df['instruction'].apply(lambda x: re.sub(r'\[\d+\]', '', str(x)))
 df['cleaned_output'] = df['output'].apply(lambda x: re.sub(r'\[\d+\]', '', str(x)))
 
-# オリジナルのテキストとクリーンなテキストが一致するか比較し、結果を新しい列に保存します
+# 元のテキストと注釈を除去したテキストが一致するかどうかを比較し、その結果を新たな列に保存する
 df['input_is_changed'] = df['input'] != df['cleaned_input']
 df['instruction_is_changed'] = df['instruction'] != df['cleaned_instruction']
 df['output_is_changed'] = df['output'] != df['cleaned_output']
